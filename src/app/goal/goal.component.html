@@ -1,0 +1,10 @@
+<div class="goalapp">
+  <h1 class="title">My Goals</h1>
+  <ul class="goals">
+    <li class="goal" *ngFor="let goal of goals">
+      id {{goal.id}}:   {{goal.name}}
+      <app-goaldetail [goal]='goal'></app-goaldetail>
+    </li>
+  </ul>
+  <p class="goallimit" *ngIf="goals.length > 5">Your goals are too many</p>
+</div>
