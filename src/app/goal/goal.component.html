@@ -1,10 +1,12 @@
 <div class="goalapp">
   <h1 class="title">My Goals</h1>
+  <hr>
   <ul class="goals">
-    <li class="goal" *ngFor="let goal of goals">
-      id {{goal.id}}:   {{goal.name}}
-      <app-goaldetail [goal]='goal'></app-goaldetail>
-    </li>
+    <div class="goaldet" *ngFor="let goal of goals, let i = index">
+      <li class="goal">{{goal.name}}</li>
+      <button (click)="toggleDetails(i)">Toggle details</button>
+      <app-goaldetail *ngIf="goal.showDescription" [goal]="goal"></app-goaldetail>
+    </div>
   </ul>
   <p class="goallimit" *ngIf="goals.length > 5">Your goals are too many</p>
 </div>
