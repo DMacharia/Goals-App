@@ -19,4 +19,10 @@ export class GoalComponent {
  toggleDetails(index:number){
   this.goals[index].showDescription = !this.goals[index].showDescription;
  }
+
+ completedGoal(isComplete:boolean, index:number){
+  if(isComplete){
+    this.goals.splice(index, 1)
+  }
+ }
 }

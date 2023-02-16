@@ -5,7 +5,7 @@
     <div class="goaldet" *ngFor="let goal of goals, let i = index">
       <li class="goal">{{goal.name}}</li>
       <button (click)="toggleDetails(i)">Toggle details</button>
-      <app-goaldetail *ngIf="goal.showDescription" [goal]="goal"></app-goaldetail>
+      <app-goaldetail *ngIf="goal.showDescription" [goal]="goal"  (isComplete)="completedGoal($event, 0)"></app-goaldetail>
     </div>
   </ul>
   <p class="goallimit" *ngIf="goals.length > 5">Your goals are too many</p>
